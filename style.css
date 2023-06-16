@@ -17,6 +17,12 @@ h1 {
     line-height: 48px;
 }
 
+img {
+    width: 30%;
+    margin: 0 auto;
+    display: block;
+}
+
 form input[type="text"] {
     border: solid 0.1px;
     border-color: lightgray;
