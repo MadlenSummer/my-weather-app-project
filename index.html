@@ -1,16 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
+        integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" ; src="https://kit.fontawesome.com/9c24b7de23.js"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
+    <title>Weather APP</title>
+    <link rel="stylesheet" href="src/style.css" />
 </head>
 
 <body>
-    <h1>
-        Hello Git
-    </h1>
+    <div class="container">
+        <h1>
+            7 DAY - WEATHER FORECAST
+        </h1>
+
+        <form id="text-form">
+            <input type="text" id="text-input" placeholder="Enter City" autofocus="on" autocomplete="off" />
+            <span class="button">
+                <input type="submit" value="SEARCH" />
+            </span>
+        </form>
+
+        <form id="current-location" />
+        <span class="location-button">
+            <input type="submit" value="CURRENT" />
+        </span>
+        </form>
+
+        <h2 id="h2">
+            LAGOS | PORTUGAL
+        </h2>
+
+        <h3 id="h3">
+            <strong>
+                Friday, May 19th
+            </strong>
+            | 5p.m.
+        </h3>
+
+        <p>
+            <span class="temperature" id="temperature">
+                <i class="fa-solid fa-wind"></i>
+                <strong>
+                    23
+                </strong>
+            </span>
+            <span class="units">
+                <a href="#" id="celsius-link"> °C |</a>
+                <a href="#" id="fahrenheit-link"> °F</a>
+            </span>
+            <span class="second">
+                <strong>/ 15°</strong>
+            </span>
+        </p>
+
+        <p class="details">
+            <span id="description">sunny, clear</span><br /> 💦 <span id="humidity">0</span>% <br />
+            🌬 <span id="wind">30</span>km/h
+        </p>
+
+        <br />
+        <br />
+        <br />
+
+        <span class="row">
+            <div class="card" style="width: 10rem;">
+                <div class="card-body">
+                    <h5 class="card-title">SATURDAY</h5>
+                    <br />
+                    <i class="fa-solid fa-wind"></i>
+                </div>
+                <hr />
+
+                <h4>
+                    <strong>
+                        24°
+                    </strong>
+                </h4>
+
+                <div class="row">
+                    <div class="col-6">
+                        <strong>
+                            14° |
+                        </strong>
+                    </div>
+                    <div class="col-6">
+                        <div class="row row-details">
+                            <div class="col-12">
+                                💦 0%<br />
+                                🌬 20km/h
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="width: 10rem;">
+                <div class="card-body">
+                    <h5 class="card-title">SUNDAY</h5>
+                    <br />
+                    <i class="fa-sharp fa-solid fa-sun sun-icon"></i>
+                </div>
+                <hr />
+
+                <h4>
+                    <strong>
+                        24°
+                    </strong>
+                </h4>
+
+                <div class="row">
+                    <div class="col-6">
+                        <strong>
+                            14° |
+                        </strong>
+                    </div>
+                    <div class="col-6">
+                        <div class="row row-details">
+                            <div class="col-12">
+                                💦 0%<br />
+                                🌬 2km/h
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="width: 10rem;">
+                <div class="card-body">
+                    <h5 class="card-title">MONDAY</h5>
+                    <br />
+                    <i class="fa-solid fa-wind"></i>
+                </div>
+                <hr />
+
+                <h4>
+                    <strong>
+                        23°
+                    </strong>
+                </h4>
+
+                <div class="row">
+                    <div class="col-6">
+                        <strong>
+                            14° |
+                        </strong>
+                    </div>
+                    <div class="col-6">
+                        <div class="row row-details">
+                            <div class="col-12">
+                                💦 0%<br />
+                                🌬 15km/h
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="width: 10rem;">
+                <div class="card-body">
+                    <h5 class="card-title">TUESDAY</h5>
+                    <br />
+                    <i class="fa-sharp fa-solid fa-sun sun-icon"></i>
+                </div>
+                <hr />
+
+                <h4>
+                    <strong>
+                        21°
+                    </strong>
+                </h4>
+
+                <div class="row">
+                    <div class="col-6">
+                        <strong>
+                            14° |
+                        </strong>
+                    </div>
+                    <div class="col-6">
+                        <div class="row row-details">
+                            <div class="col-12">
+                                💦 0%<br />
+                                🌬 5km/h
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="width: 10rem;">
+                <div class="card-body">
+                    <h5 class="card-title">WEDNESDAY</h5>
+                    <br />
+                    <i class="fa-sharp fa-solid fa-sun sun-icon"></i>
+                </div>
+                <hr />
+
+                <h4>
+                    <strong>
+                        24°
+                    </strong>
+                </h4>
+
+                <div class="row">
+                    <div class="col-6">
+                        <strong>
+                            15° |
+                        </strong>
+                    </div>
+                    <div class="col-6">
+                        <div class="row row-details">
+                            <div class="col-12">
+                                💦 0%<br />
+                                🌬 2,5km/h
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="width: 10rem;">
+                <div class="card-body">
+                    <h5 class="card-title">THURSDAY</h5>
+                    <br />
+                    <i class="fas fa-sun sun-icon"></i>
+                    <i class="fas fa-cloud cloud-icon"></i>
+                </div>
+                <hr />
+
+                <h4>
+                    <strong>
+                        21°
+                    </strong>
+                </h4>
+
+                <div class="row">
+                    <div class="col-6">
+                        <strong>
+                            14° |
+                        </strong>
+                    </div>
+                    <div class="col-6">
+                        <div class="row row-details">
+                            <div class="col-12">
+                                💦 0%<br />
+                                🌬 10km/h
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </span>
+    </div>
 </body>
+<script src="src/content.js"></script>
+
 </html>
