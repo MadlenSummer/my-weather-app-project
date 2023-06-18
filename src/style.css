@@ -3,6 +3,7 @@ body {
     box-sizing: content-box;
     max-width: 1000px;
     width: 100%;
+    font-family: "Afrah", sans-serif;
 }
 
 h1 {
@@ -151,4 +152,13 @@ h5 {
     right: 50px;
     bottom: 150px;
     z-index: 1;
+}
+
+
+.open-source a, 
+.open-source .author {
+    color: aliceblue;
+    font-size: 15px;
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.3);
+    display: inline;
 }
